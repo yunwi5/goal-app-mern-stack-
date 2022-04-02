@@ -13,9 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/goals', require('./routes/goal-routes'));
+app.use('/api/users', require('./routes/user-routes'));
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`App serving on the port ${PORT}`)
 })
