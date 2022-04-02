@@ -1,10 +1,13 @@
 const express = require('express');
+const colors = require('colors');
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 const { errHandler, errorHandler } = require('./middleware/error-middleware');
+const connectDB = require('./config/db');
 
 const app = express();
+connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
