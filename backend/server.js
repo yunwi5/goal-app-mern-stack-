@@ -3,7 +3,7 @@ const colors = require('colors');
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
-const { errHandler, errorHandler } = require('./middleware/error-middleware');
+const { errorHandler } = require('./middleware/error-middleware');
 const connectDB = require('./config/db');
 
 const app = express();
